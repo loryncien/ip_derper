@@ -2,7 +2,7 @@ name: 'Submodules Sync'
 
 on:
   schedule:
-  - cron: "0 2 * * *"
+  - cron: "1 0 * * *"
   # Allows you to run this workflow manually from the Actions tab or through HTTP API
   workflow_dispatch:
 
@@ -21,7 +21,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-        token: ${{ secrets.CI_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         submodules: false  # 不自动检出子模块
 
     - name: Checkout submodules
