@@ -2,11 +2,6 @@ name: Docker Image CI
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'tailscale/VERSION.txt'
       
 jobs:
   deploy:
