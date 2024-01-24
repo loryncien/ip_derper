@@ -14,14 +14,6 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - name: paths-filter
-        id: changes
-        uses: dorny/paths-filter@v2
-        with:
-          filters: |
-            submodule:
-              - 'tailscale/VERSION.txt'
-
       - name: modify
         if: steps.changes.outputs.submodule == 'true'
         run: |
